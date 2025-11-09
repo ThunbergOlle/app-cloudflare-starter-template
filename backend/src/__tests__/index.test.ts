@@ -1,7 +1,6 @@
 import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { SELF, env } from 'cloudflare:test';
 
-// Mock the external dependencies to avoid LangChain import issues
 vi.mock('../lib/external/openai/api', () => ({
   OpenaiAPI: {
     decodeMonumentImage: vi.fn(),

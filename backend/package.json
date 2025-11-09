@@ -43,12 +43,8 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@langchain/core": "^0.3.78",
-    "@langchain/google-genai": "^0.2.18",
-    "@langchain/openai": "^0.6.16",
     "@trpc/server": "^11.4.4",
     "drizzle-orm": "^0.44.4",
-    "langchain": "^0.3.36",
     "resend": "^6.1.2",
     "zod": "^4.0.17"
   }
