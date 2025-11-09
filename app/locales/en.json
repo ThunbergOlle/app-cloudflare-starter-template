@@ -1,0 +1,143 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "ok": "OK",
+    "back": "← Back",
+    "close": "Close"
+  },
+  "home": {
+    "title": "My app"
+  },
+  "profile": {
+    "title": "Profile",
+    "loading": "Loading...",
+    "loadError": "Failed to load profile",
+    "tapToAddName": "Tap to add name",
+    "enterName": "Enter your name",
+    "enterYourName": "Enter your name",
+    "nameCannotBeEmpty": "Name cannot be empty",
+    "updateNameError": "Failed to update name. Please try again.",
+    "settings": "Settings",
+    "personalInformation": "Personal information",
+    "language": "Language",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "developerTools": "Developer Tools",
+    "resetOnboarding": "Reset Onboarding (Dev Only)",
+    "onboardingResetSuccess": "Onboarding reset! Restart the app to see it again.",
+    "onboardingResetError": "Failed to reset onboarding.",
+    "logout": "Logout",
+    "updateId": "Update ID",
+    "region": "Region",
+    "deleteAccount": "Delete Account",
+    "deleteAccountTitle": "Delete Account?",
+    "deleteAccountMessage": "Are you sure you want to delete your account? This action cannot be undone and all your data will be permanently deleted.",
+    "deleteAccountConfirm": "Delete",
+    "deleteAccountSuccess": "Your account has been deleted",
+    "deleteAccountError": "Failed to delete account. Please try again."
+  },
+  "auth": {
+    "login": {
+      "title": "Log in or sign up",
+      "email": "Email",
+      "enterEmail": "Enter your email",
+      "emailRequired": "Email is required",
+      "invalidEmail": "Invalid email address",
+      "emailCheckHelp": "We'll check if you have an account",
+      "continue": "Continue",
+      "checking": "Checking...",
+      "or": "or",
+      "continueWithGoogle": "Continue with Google",
+      "continueWithApple": "Continue with Apple",
+      "byContinuing": "By continuing, you agree to our",
+      "privacyPolicy": "Privacy Policy",
+      "emailCheckError": "Failed to check email. Please try again."
+    },
+    "signup": {
+      "title": "Create your account",
+      "createAccount": "Create Account",
+      "creatingAccount": "Creating Account...",
+      "firstName": "First name",
+      "email": "Email",
+      "enterEmail": "Enter your email",
+      "password": "Password",
+      "createPassword": "Create a password",
+      "confirmPassword": "Confirm password",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordConfirmRequired": "Please confirm your password",
+      "passwordsNoMatch": "Passwords do not match",
+      "passwordHelp": "Must be at least 8 characters",
+      "confirmPasswordHelp": "Re-enter your password to confirm",
+      "emailRequired": "Email is required",
+      "invalidEmail": "Invalid email address",
+      "passwordRequired": "Password is required",
+      "terms": "By creating an account, you agree to our Terms of Service and Privacy Policy.",
+      "sessionSaveError": "Failed to save session. Please try logging in.",
+      "accountCreatedNoSession": "Account created but no session token received",
+      "createAccountError": "Failed to create account. Please try again."
+    },
+    "password": {
+      "title": "Welcome back",
+      "password": "Password",
+      "enterPassword": "Enter your password",
+      "passwordRequired": "Password is required",
+      "passwordHelp": "Enter the password for your account",
+      "signIn": "Sign In",
+      "signingIn": "Signing In...",
+      "forgotPassword": "Forgot your password?",
+      "emailRequired": "Email is required",
+      "sessionSaveError": "Failed to save session. Please try again.",
+      "loginFailed": "Login failed. Please try again.",
+      "loginError": "Failed to sign in. Please try again.",
+      "forgotPasswordComingSoon": "Password reset functionality coming soon!",
+      "resetPasswordConfirmTitle": "Reset Password",
+      "resetPasswordConfirmMessage": "Send a password reset link to your email?",
+      "resetPasswordSend": "Send",
+      "resetPasswordSuccess": "Password Reset Link Sent",
+      "resetPasswordSuccessMessage": "A password reset link has been sent to your email address. Please check your inbox and follow the instructions to reset your password.",
+      "resetPasswordError": "Failed to send password reset email"
+    },
+    "apple": {
+      "signInFailed": "Apple Sign-In failed. Please try again.",
+      "invalidResponse": "Invalid Apple Sign-In response. Please try again.",
+      "accountLinkingError": "Failed to link Apple account. Please try again.",
+      "alreadyLinked": "This Apple account is already linked to another account."
+    }
+  },
+  "languageSelector": {
+    "title": "Select Language",
+    "swedish": "Svenska",
+    "english": "English"
+  },
+  "onboarding": {
+    "skip": "Skip",
+    "next": "Next",
+    "getStarted": "Get Started",
+    "camera": {
+      "title": "Enable Camera Access",
+      "description": "Allow Aperto to access your camera to scan monuments and discover their fascinating stories instantly.",
+      "benefit1": "Scan any monument or landmark to learn its history",
+      "benefit2": "Get instant AI-powered historical information",
+      "benefit3": "Capture and save your discoveries",
+      "notNow": "Not Now",
+      "permissionDenied": "Camera Permission Denied",
+      "permissionDeniedMessage": "You can still use the app, but you won't be able to scan monuments. You can enable camera access later in your device settings.",
+      "permissionError": "Failed to request camera permission. Please try again."
+    },
+    "location": {
+      "title": "Enable Location Access",
+      "description": "Allow Aperto to access your location to find interesting monuments and landmarks nearby.",
+      "benefit1": "Discover monuments and landmarks around you",
+      "benefit2": "Get personalized recommendations based on your location",
+      "benefit3": "Receive notifications about nearby historical sites",
+      "allowLocation": "Allow Location Access",
+      "notNow": "Not Now",
+      "permissionDenied": "Location Permission Denied",
+      "permissionDeniedMessage": "You can still use the app, but you won't see nearby monuments. You can enable location access later in your device settings.",
+      "permissionError": "Failed to request location permission. Please try again."
+    }
+  }
+}

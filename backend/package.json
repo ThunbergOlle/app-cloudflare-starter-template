@@ -1,0 +1,55 @@
+{
+  "name": "d1-template",
+  "description": "Cloudflare's native serverless SQL database.",
+  "cloudflare": {
+    "label": "Worker + D1 Database",
+    "products": [
+      "Workers",
+      "D1"
+    ],
+    "categories": [
+      "storage"
+    ],
+    "icon_urls": [
+      "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/c6fc5da3-1e0a-4608-b2f1-9628577ec800/public",
+      "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/5ca0ca32-e897-4699-d4c1-6b680512f000/public"
+    ],
+    "docs_url": "https://developers.cloudflare.com/d1/",
+    "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/cb7cb0a9-6102-4822-633c-b76b7bb25900/public",
+    "publish": true
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.4.26",
+    "@types/node": "^24.3.0",
+    "drizzle-kit": "^0.31.4",
+    "eslint": "^9.33.0",
+    "prettier": "^3.6.2",
+    "typescript": "5.8.3",
+    "vitest": "^1.5.3",
+    "wrangler": "^4.30.0"
+  },
+  "scripts": {
+    "cf-typegen": "wrangler types",
+    "check": "tsc && wrangler deploy --dry-run",
+    "deploy": "wrangler deploy --env=production",
+    "dev": "npm run dev:setup && wrangler dev --env=development --ip 0.0.0.0 --persist-to ./.wrangler-persist",
+    "dev:remote": "wrangler dev --env=development --ip 0.0.0.0 --remote",
+    "generate": "drizzle-kit generate",
+    "predeploy": "wrangler d1 migrations apply DB --remote --env=production",
+    "dev:setup": "wrangler d1 migrations apply DB --local --persist-to ./.wrangler-persist --env=development",
+    "dev:query": "wrangler d1 execute DB --local --persist-to ./.wrangler-persist --env=development",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.78",
+    "@langchain/google-genai": "^0.2.18",
+    "@langchain/openai": "^0.6.16",
+    "@trpc/server": "^11.4.4",
+    "drizzle-orm": "^0.44.4",
+    "langchain": "^0.3.36",
+    "resend": "^6.1.2",
+    "zod": "^4.0.17"
+  }
+}

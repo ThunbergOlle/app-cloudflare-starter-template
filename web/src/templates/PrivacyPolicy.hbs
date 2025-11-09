@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #7f8c8d;
+        }
+        .last-updated {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+        .contact-info {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .gdpr-notice {
+            background: #e8f5e8;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{title}}</h1>
+        <p class="last-updated">{{lastUpdated}}</p>
+
+        <h2>Introduction</h2>
+        <p>{{introduction}}</p>
+
+        <div class="gdpr-notice">
+            <strong>GDPR Notice:</strong> {{gdprNotice}}
+        </div>
+
+        <h2>Information We Collect</h2>
+        
+        <h3>Personal Information</h3>
+        <ul>
+            {{#each personalInfo}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <h3>Location Data</h3>
+        <p>{{locationDataDescription}}</p>
+        <ul>
+            {{#each locationData}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <h3>Camera and Photos</h3>
+        <p>{{cameraDescription}}</p>
+        <ul>
+            {{#each cameraData}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <h3>Device Information</h3>
+        <ul>
+            {{#each deviceInfo}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <h3>Audio and Microphone Data</h3>
+        <ul>
+            {{#each audioData}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <h3>Notification Data</h3>
+        <ul>
+            {{#each notificationData}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <h2>Legal Basis for Processing (GDPR)</h2>
+        <p>{{legalBasisIntro}}</p>
+        <ul>
+            {{#each legalBases}}
+            <li><strong>{{name}}:</strong> {{description}}</li>
+            {{/each}}
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <ul>
+            {{#each dataUsage}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <h2>Data Sharing and International Transfers</h2>
+        <p>{{dataSharingIntro}}</p>
+        <ul>
+            {{#each dataSharing}}
+            <li><strong>{{service}}:</strong> {{purpose}} {{#if location}}({{location}}){{/if}}</li>
+            {{/each}}
+        </ul>
+
+        <h2>Your Rights Under GDPR</h2>
+        <p>{{rightsIntro}}</p>
+        <ul>
+            {{#each gdprRights}}
+            <li><strong>{{right}}:</strong> {{description}}</li>
+            {{/each}}
+        </ul>
+
+        <h2>Data Security</h2>
+        <p>{{securityDescription}}</p>
+        <ul>
+            {{#each securityMeasures}}
+            <li>{{this}}</li>
+            {{/each}}
+        </ul>
+
+        <h2>Data Retention</h2>
+        <p>{{dataRetentionPolicy}}</p>
+
+        <h2>Children's Privacy</h2>
+        <p>{{childrensPrivacy}}</p>
+
+        <h2>Changes to This Policy</h2>
+        <p>{{policyChanges}}</p>
+
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p>{{contactIntro}}</p>
+            <p><strong>Email:</strong> {{contactEmail}}<br>
+            <strong>Address:</strong> {{address}}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+export default {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
+          return parent[propertyName];
+        }
+        return undefined
+    };
+
+  return "<div class=\"max-w-2xl mx-auto\">\n  <div class=\"bg-white rounded-lg shadow-lg p-8\">\n    <h1 class=\"text-4xl font-bold text-gray-800 mb-4\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"message") || (depth0 != null ? lookupProperty(depth0,"message") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"message","hash":{},"data":data,"loc":{"start":{"line":3,"column":54},"end":{"line":3,"column":65}}}) : helper)))
+    + "</h1>\n    \n    <p class=\"text-gray-600 mb-6\">\n      This is a hello world example using:\n    </p>\n    \n    <ul class=\"list-disc list-inside text-gray-600 mb-8 space-y-2\">\n      <li><strong>Cloudflare Workers</strong> - Edge computing platform</li>\n      <li><strong>Hono</strong> - Fast web framework</li>\n      <li><strong>Handlebars</strong> - Template engine (precompiled)</li>\n      <li><strong>HTMX</strong> - Interactive frontend</li>\n      <li><strong>TailwindCSS</strong> - Styling</li>\n    </ul>\n\n    <div class=\"bg-blue-50 border border-blue-200 rounded-lg p-6\">\n      <h2 class=\"text-xl font-semibold text-blue-800 mb-4\">Interactive Demo</h2>\n      <p class=\"text-blue-700 mb-4\">Click count: <span id=\"count\" class=\"font-bold\">"
+    + alias4(((helper = (helper = lookupProperty(helpers,"count") || (depth0 != null ? lookupProperty(depth0,"count") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"count","hash":{},"data":data,"loc":{"start":{"line":19,"column":84},"end":{"line":19,"column":93}}}) : helper)))
+    + "</span></p>\n      \n      <button \n        hx-post=\"/api/increment\" \n        hx-target=\"#count\" \n        hx-swap=\"innerHTML\"\n        class=\"bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg transition-colors duration-200\"\n      >\n        Click me! (HTMX)\n      </button>\n      \n      <p class=\"text-sm text-blue-600 mt-2\">\n        This button uses HTMX to make a POST request without page reload\n      </p>\n    </div>\n  </div>\n</div>";
+},"useData":true};

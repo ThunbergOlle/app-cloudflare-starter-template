@@ -1,0 +1,90 @@
+tRPC - Docs
+
+- For v10: https://trpc.io/llms-v10.txt
+- For v9: https://trpc.io/llms-v9.txt
+
+## Documentation Pages
+
+- [Send cookies cross-origin](/docs/client/cors): If your API resides on a different origin than your front-end and you wish to send cookies to it, you will need to enable CORS on your server and send cookies with your requests by providing the option {credentials: "include"} to fetch.
+- [Custom header](/docs/client/headers): The headers option can be customized in the config when using the httpBatchLink or the httpLink.
+- [HTTP Batch Link](/docs/client/links/httpBatchLink): httpBatchLink is a terminating link that batches an array of individual tRPC operations into a single HTTP request that's sent to a single tRPC procedure.
+- [HTTP Batch Stream Link](/docs/client/links/httpBatchStreamLink): httpBatchStreamLink is a terminating link that batches an array of individual tRPC operations into a single HTTP request that's sent to a single tRPC procedure (equivalent to httpBatchLink), but doesn't wait for all the responses of the batch to be ready and streams the responses as soon as any data is available.
+- [HTTP Link](/docs/client/links/httpLink): httpLink is a terminating link that sends a tRPC operation to a tRPC procedure over HTTP.
+- [HTTP Subscription Link](/docs/client/links/httpSubscriptionLink): httpSubscriptionLink is a terminating link that's uses Server-sent Events (SSE) for subscriptions.
+- [Local Link](/docs/client/links/localLink): A link for direct procedure calls without HTTP overhead
+- [Logger Link](/docs/client/links/loggerLink): loggerLink is a link that lets you implement a logger for your tRPC client. It allows you to see more clearly what operations are queries, mutations, or subscriptions, their requests, and responses. The link, by default, prints a prettified log to the browser's console. However, you can customize the logging behavior and the way it prints to the console with your own implementations.
+- [Links Overview](/docs/client/links/overview): Links enable you to customize the flow of data between the tRPC Client and Server. A link should do only one thing, which can be either a self-contained modification to a tRPC operation (query, mutation, or subscription) or a side-effect based on the operation (such as logging).
+- [Retry Link](/docs/client/links/retryLink): retryLink is a link that allows you to retry failed operations in your tRPC client. It provides a customizable way to handle transient errors, such as network failures or server errors, by automatically retrying the failed requests based on specified conditions.
+- [Split Link](/docs/client/links/splitLink): splitLink is a link that allows you to branch your link chain's execution depending on a given condition. Both the true and false branches are required. You can provide just one link, or multiple links per branch via an array.
+- [WebSocket Link](/docs/client/links/wsLink): wsLink is a terminating link that's used when using tRPC's WebSockets Client and Subscriptions, which you can learn more about here).
+- [Aborting Procedure Calls](/docs/client/nextjs/aborting-procedure-calls): By default, tRPC does not cancel requests on unmount. If you want to opt into this behavior, you can provide abortOnUnmount in your configuration callback.
+- [Next.js Integration](/docs/client/nextjs/introduction): tRPC ❤️ Next.js
+- [Server-Side Helpers](/docs/client/nextjs/server-side-helpers): The server-side helpers provides you with a set of helper functions that you can use to prefetch queries on the server. This is useful for SSG, but also for SSR if you opt not to use ssr: true.
+- [Set up with Next.js Pages Router](/docs/client/nextjs/setup): This guide is for Next.js Pages Router. If you are using Next.js App Router with React Server components, check out the RSC docs
+- [Static Site Generation](/docs/client/nextjs/ssg): Reference project//github.com/trpc/examples-next-prisma-todomvc
+- [Server-Side Rendering](/docs/client/nextjs/ssr): To enable SSR just set ssr: true in your createTRPCNext config callback.
+- [Starter Projects](/docs/client/nextjs/starter-projects): Get started quickly with one of the sample projects! Copy the snippet from Quick start with create-next-app in the below list to clone the project.
+- [Client Overview](/docs/client/overview): While a tRPC API can be called using normal HTTP requests like any other REST API, you will need a client to benefit from tRPC's typesafety.
+- [Aborting Procedure Calls](/docs/client/react/aborting-procedure-calls): By default, tRPC does not cancel requests via React Query. If you want to opt into this behaviour, you can provide abortOnUnmount in your configuration.
+- [createTRPCQueryUtils](/docs/client/react/createTRPCQueryUtils): The use case for createTRPCQueryUtils is when you need to use the helpers outside of a React Component, for example in react-routers loaders.
+- [Disabling Queries](/docs/client/react/disabling-queries): To disable queries, you can pass skipToken as the first argument to useQuery or useInfiniteQuery. This will prevent the query from being executed.
+- [getQueryKey](/docs/client/react/getQueryKey): We provide a getQueryKey helper that accepts a router or procedure so that you can easily provide the native function the correct query key.
+- [Inferring Types](/docs/client/react/infer-types): In addition to the type inference made available by @trpc/server (see here) this integration also provides some inference helpers for usage purely in React.
+- [React Query Integration (Classic)](/docs/client/react/introduction): React Query Integration
+- [Set up with React Server Components](/docs/client/react/server-components): These are the docs for our 'Classic' React Query integration, which (while still supported) is not the recommended way to start new tRPC projects with TanStack React Query. We recommend using the new TanStack React Query Integration instead.
+- [Set up the React Query Integration](/docs/client/react/setup): How to use and setup tRPC in React
+- [Suspense](/docs/client/react/suspense): - Ensure you're on the latest version of React
+- [useInfiniteQuery](/docs/client/react/useInfiniteQuery): - Your procedure needs to accept a cursor input of any type (string, number, etc) to expose this hook.
+- [useMutation()](/docs/client/react/useMutation): The hooks provided by @trpc/react-query are a thin wrapper around @tanstack/react-query. For in-depth information about options and usage patterns, refer to their docs on mutations.
+- [useQueries()](/docs/client/react/useQueries): The useQueries hook can be used to fetch a variable number of queries at the same time using only one hook call.
+- [useQuery()](/docs/client/react/useQuery): useQuery is the primary hook for data fetching, it works similarly to @tanstack/react-query's useQuery, but with some trpc specific options and additional features like streaming.
+- [useSubscription()](/docs/client/react/useSubscription): The useSubscription hook can be used to subscribe to a subscription procedure on the server.
+- [useUtils](/docs/client/react/useUtils): useUtils is a hook that gives you access to helpers that let you manage the cached data of the queries you execute via @trpc/react-query. These helpers are actually thin wrappers around @tanstack/react-query's queryClient methods. If you want more in-depth information about options and usage patterns for useContext helpers than what we provide here, we will link to their respective @tanstack/react-query docs so you can refer to them accordingly.
+- [Migrating from the classic React Client](/docs/client/tanstack-react-query/migrating): Migrating from the classic React Client
+- [Set up with React Server Components](/docs/client/tanstack-react-query/server-components): This guide is an overview of how one may use tRPC with a React Server Components (RSC) framework such as Next.js App Router.
+- [TanStack React Query](/docs/client/tanstack-react-query/setup): TanStack React Query setup
+- [TanStack React Query](/docs/client/tanstack-react-query/usage): TanStack React Query usage
+- [Aborting Procedure Calls](/docs/client/vanilla/aborting-procedure-calls): tRPC adheres to the industry standard when it comes to aborting procedures. All you have to do is pass an AbortSignal to the query or mutation options, and call the AbortController instance's abort method if you need to cancel the request.
+- [Inferring Types](/docs/client/vanilla/infer-types): It is often useful to access the types of your API within your clients. For this purpose, you are able to infer the types contained in your AppRouter.
+- [tRPC Client](/docs/client/vanilla/introduction): The "Vanilla" tRPC client can be used to call your API procedures as if they are local functions, enabling a seamless development experience.
+- [Set up a tRPC Client](/docs/client/vanilla/setup): 1. Install the tRPC Client library
+- [Awesome tRPC Collection](/docs/community/awesome-trpc): A collection of resources on tRPC.
+- [Contributing](/docs/community/contributing): 
+- [Testimonials / Love](/docs/community/love): 
+- [Sponsors](/docs/community/sponsors): 
+- [FAQ / Troubleshooting](/docs/further/faq): Collection of frequently asked questions with ideas on how to troubleshoot & resolve them.
+- [Further Reading](/docs/further/further-reading): Who is this for?
+- [HTTP RPC Specification](/docs/further/rpc): Methods \ Type mapping
+- [Step1](/docs/landing-intro/Step1): 
+- [Step2](/docs/landing-intro/Step2): 
+- [Step3](/docs/landing-intro/Step3): 
+- [Concepts](/docs/main/concepts): What is RPC? What mindset should I adopt?
+- [Example Apps](/docs/main/example-apps): Example apps built with tRPC
+- [Getting Started](/docs/main/getting-started): A quick look at tRPC
+- [tRPC](/docs/main/introduction): End-to-end typesafe APIs made easy
+- [Quickstart](/docs/main/quickstart): Learn how to quickly get started and setup tRPC
+- [Videos and Community Resources](/docs/main/videos-and-community-resources): Matt Pocock: Learn tRPC in 5 minutes
+- [Migrate from v10 to v11](/docs/migration/migrate-from-v10-to-v11): Migrating from v10 to v11
+- [Adapters](/docs/server/adapters-intro): tRPC is not a server on its own, and must therefore be served using other hosts, such as a simple Node.js HTTP Server, Express, or even Next.js. Most tRPC features are the same no matter which backend you choose. Adapters act as the glue between the host system and your tRPC API.
+- [AWS Lambda + API Gateway Adapter](/docs/server/adapters/aws-lambda): AWS Lambda adapter
+- [Express Adapter](/docs/server/adapters/express): Example app
+- [Fastify Adapter](/docs/server/adapters/fastify): Example app
+- [Fetch / Edge Runtimes Adapter](/docs/server/adapters/fetch): You can create a tRPC server within any edge runtime that follow the WinterCG, specifically the Minimum Common Web Platform API specification.
+- [Next.js Adapter](/docs/server/adapters/nextjs): tRPC's support for Next.js is far more expansive than just an adapter. This page covers a brief summary of how to set up the adapter, but complete documentation is available here
+- [Standalone Adapter](/docs/server/adapters/standalone): tRPC's Standalone Adapter is the simplest way to get a new project working. It's ideal for local development, and for server-based production environments. In essence it's just a wrapper around the standard Node.js HTTP Server with the normal options related to tRPC.
+- [Authorization](/docs/server/authorization): The createContext function is called for each incoming request, so here you can add contextual information about the calling user from the request object.
+- [Response Caching](/docs/server/caching): The below examples uses Vercel's edge caching to serve data to your users as fast as possible.
+- [Context](/docs/server/context): Your context holds data that all of your tRPC procedures will have access to, and is a great place to put things like database connections or authentication information.
+- [Data Transformers](/docs/server/data-transformers): You are able to serialize the response data & input args. The transformers need to be added both to the server and the client.
+- [Error Formatting](/docs/server/error-formatting): The error formatting in your router will be inferred all the way to your client (&&nbsp;React&nbsp;components)
+- [Error Handling](/docs/server/error-handling): Whenever an error occurs in a procedure, tRPC responds to the client with an object that includes an "error" property. This property contains all the information that you need to handle the error in the client.
+- [Merging Routers](/docs/server/merging-routers): Writing all API-code in your code in the same file is not a great idea. It's easy to merge routers with other routers.
+- [Metadata](/docs/server/metadata): Procedure metadata allows you to add an optional procedure specific meta property which will be available in all middleware function parameters.
+- [Middlewares](/docs/server/middlewares): You are able to add middleware(s) to a procedure with the t.procedure.use() method. The middleware(s) will wrap the invocation of the procedure and must pass through its return value.
+- [Non-JSON Content Types](/docs/server/non-json-content-types): In addition to JSON-serializable data, tRPC can use FormData, File, and other Binary types as procedure inputs
+- [Define Procedures](/docs/server/procedures): A procedure is a function which is exposed to the client, it can be one of:
+- [Define Routers](/docs/server/routers): To begin building your tRPC-based API, you'll first need to define your router. Once you've mastered the fundamentals, you can customize your routers for more advanced use cases.
+- [Server Side Calls](/docs/server/server-side-calls): You may need to call your procedure(s) directly from the same server they're hosted in, createCallerFactory() can be used to achieve this. This is useful for server-side calls and for integration testing of your tRPC procedures.
+- [Subscriptions](/docs/server/subscriptions): Introduction
+- [Input & Output Validators](/docs/server/validators): tRPC procedures may define validation logic for their input and/or output, and validators are also used to infer the types of inputs and outputs. We have first class support for many popular validators, and you can integrate validators which we don't directly support.
+- [WebSockets](/docs/server/websockets): You can use WebSockets for all or some of the communication with your server, see wsLink for how to set it up on the client.

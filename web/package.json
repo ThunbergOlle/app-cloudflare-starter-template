@@ -1,0 +1,20 @@
+{
+	"name": "web",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy --env production",
+		"dev": "wrangler dev",
+		"start": "wrangler dev"
+	},
+	"devDependencies": {
+		"@types/handlebars": "^4.1.0",
+		"typescript": "^5.5.2",
+		"wrangler": "^4.40.2"
+	},
+	"dependencies": {
+		"@trpc/client": "^11.6.0",
+		"handlebars": "^4.7.8",
+		"hono": "^4.7.5"
+	}
+}

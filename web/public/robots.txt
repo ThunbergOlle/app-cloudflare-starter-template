@@ -1,0 +1,14 @@
+# Robots.txt for Aperto
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow password reset pages with tokens (privacy)
+Disallow: /user/password-reset?token=
+
+# Disallow API endpoints
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://aperto-app.com/sitemap.xml
